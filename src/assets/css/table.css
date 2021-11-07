@@ -1,0 +1,109 @@
+#table .line {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 25% 25% 25% 25%;
+    border-bottom: 1px solid gray;
+}
+
+.line p, .line h3, .line .task-title-container h5, .line span {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+#table {
+    padding: 40px 50px;
+    font-family: OpenSans;
+}
+
+.line h3 {
+    color: gray;
+    font-family: OpenSansBold;
+}
+
+.line .task-title-container h5 {
+    font-family: OpenSansBold;
+}
+
+.task-title-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+}
+
+.arrow {
+    border: solid rgb(22, 114, 236);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    height: fit-content;
+    margin-right: 10px;
+    position: relative;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.no-arrow {
+    width: 18px;
+}
+
+.status-square {
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: OpenSansBold;
+}
+
+.status1 {
+    background-color: rgb(235, 241, 253);
+    color: rgb(55, 74, 240);
+    border: 1px solid rgb(55, 74, 240);
+}
+
+.status2 {
+    background-color: rgb(254, 248, 232);
+    color: rgb(182, 140, 21);
+    border: 1px solid rgb(182, 140, 21);
+}
+
+.status3 {
+    background-color: rgb(235, 249, 235);
+    color: rgb(60, 193, 59);
+    border: 1px solid rgb(60, 193, 59);
+}
+
+.status-menu {
+    position: absolute;
+    z-index: 2;
+    background-color: rgb(249, 249, 249);
+    top: 125%;
+    left: 0;
+    box-shadow: 0px 0px 6px -3px;
+    border-radius: 7px;
+    padding: 0px 10px;
+}
+
+.status-menu .menu-line {
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    column-gap: 10px;
+    justify-content: start;
+}
+
+input[type='radio'] {
+    transform: scale(1.4);
+}
+
+.position-relative {
+    position: relative;
+}
