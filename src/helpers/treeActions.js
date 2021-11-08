@@ -24,7 +24,7 @@ class Tree {
     }
 }
 
-// This function gets task id and returns if the task has sub tasks
+// The function gets task id and returns if the task has sub tasks
 const isTaskHasSubTasks = (taskId) => {
     for(let i = 0; i < tasks.length; i++) {
         if(tasks[i].pid === taskId) {
@@ -34,7 +34,7 @@ const isTaskHasSubTasks = (taskId) => {
     return false;
 }
 
-// This function returns array of tasks without parent
+// The function returns array of tasks without parent
 const initialTasks = () => {
     return (tasks.filter(task => task.pid === undefined)
                     .map(task => {return new Tree(task.id, task.data, isTaskHasSubTasks(task.id))}))
@@ -42,8 +42,8 @@ const initialTasks = () => {
 
 let rootTasks = initialTasks();
 
-// This function gets value and returns array of tasks nodes that contain the value
-// For example: for value = 1 and filterType = status the function will return tasks with status: 1
+// The function gets value and returns array of tasks nodes that contain the value
+// For example: for value = 1 and filterType = status the function returns tasks with status: 1
 const findTasksByValue = (value, filterType) => {
     const newTasks = [];
 
@@ -56,7 +56,7 @@ const findTasksByValue = (value, filterType) => {
     return newTasks;
 }
 
-// This function gets array of assignees names, array of statuses and string search value.
+// The function gets array of assignees id, array of statuses and string search value.
 // Returns array of tasks nodes that contain at least 1 value of every array and their title contains the search string
 // Also updates the array of root tasks
 const filter = (assigneeValues, statusValues, search) => {
@@ -107,7 +107,7 @@ const filter = (assigneeValues, statusValues, search) => {
     return avoidDuplicationInArray(rootTasks);
 }
 
-// Returns array that contains common values of 2 arrays of tasks nodes
+// Returns array with common values of 2 arrays of tasks nodes
 const commonValuesInArraysOfNodes = (array1, array2) => {
     let commonValues = [];
     array1.forEach(value => {
@@ -133,7 +133,7 @@ const avoidDuplicationInArray = (array) => {
     return array;
 }
 
-// Changes status of task node
+// Changes the status of a task
 const changeStatus = (status, taskNode) => {
     taskNode.data.status = status;
     return rootTasks;
