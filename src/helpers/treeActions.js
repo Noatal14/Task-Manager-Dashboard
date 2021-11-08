@@ -34,7 +34,7 @@ const isTaskHasSubTasks = (taskId) => {
     return false;
 }
 
-// The function returns array of tasks without parent
+// The function returns an array of tasks without parent
 const initialTasks = () => {
     return (tasks.filter(task => task.pid === undefined)
                     .map(task => {return new Tree(task.id, task.data, isTaskHasSubTasks(task.id))}))
@@ -55,7 +55,7 @@ const findTasksByValue = (value, filterType) => {
 }
 
 // The function gets array of assignees id, array of statuses and string search value.
-// Returns array of tasks nodes that contain at least 1 value of every array and their title contains the search string
+// Returns array of task nodes that contain at least 1 value of every array and their title contains the search string
 // Also updates the array of root tasks
 const filter = (assigneeValues, statusValues, search) => {
     if(assigneeValues.length === 0 && statusValues.length === 0 && search.length === 0) {
