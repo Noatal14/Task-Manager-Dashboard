@@ -42,8 +42,6 @@ const initialTasks = () => {
 
 let rootTasks = initialTasks();
 
-// The function gets value and returns array of tasks nodes that contain the value
-// For example: for value = 1 and filterType = status the function returns tasks with status: 1
 const findTasksByValue = (value, filterType) => {
     const newTasks = [];
 
@@ -120,7 +118,7 @@ const commonValuesInArraysOfNodes = (array1, array2) => {
     return commonValues;
 }
 
-// Returns new array without duplication
+// The function gets an array and returns new array without duplication
 const avoidDuplicationInArray = (array) => {
     array.forEach((value, index1) => {
         array.forEach((value2, index2) => {
